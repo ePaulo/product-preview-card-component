@@ -22,4 +22,4 @@ focus on making the code adhere to current accessibility standards
 
 ### What I learned
 
-I had to learn how to use the <picture> tag to setup two different image source files, visible depending on view-screen width.
+I had to learn how to use the &lt;picture&gt; tag to setup two different image source files, visible depending on view-screen width.
