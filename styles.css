@@ -4,13 +4,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  outline: 1px dashed red; /* Outline for debugging */
+  /* outline: 1px dashed red; Outline for debugging */
 }
 
 :root {
   /* Primary Colors */
   --color-primary: hsl(158, 36%, 37%); /* dark cyan */
   --color-primary-light: hsl(30, 38%, 92%); /* cream #f2f2f2 */
+  --color-primary-dark: hsl(159, 47%, 20%); /* very dark cyan */
 
   /* Neutral Colors */
   --color-neutral-1: hsl(212, 21%, 14%); /* very darkblue */
@@ -33,18 +34,18 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
 main.card {
   width: 343px;
-  margin: 0 auto;
+  margin: 0 auto 2em;
 
   section.card-image {
     img {
-      width: 100%;
+      max-width: 100%;
       border-radius: 1rem 1rem 0 0;
     }
   }
@@ -52,6 +53,7 @@ main.card {
   section.card-product {
     padding: 2.4em;
     border-radius: 0 0 1rem 1rem;
+    background-color: var(--color-neutral-3);
 
     h2.product-category {
       margin-bottom: 1.2em;
@@ -62,7 +64,6 @@ main.card {
     }
 
     h1.product-name {
-      /* width: 100%; */
       margin: 0.3em auto;
       color: var(--color-neutral-1);
       font-family: 'Fraunces', serif;
@@ -79,16 +80,28 @@ main.card {
     }
 
     div.product-price {
+      margin-top: 2.5em;
+
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      gap: 2.5em;
+
       span.price-discount {
+        color: var(--color-primary);
+        font-size: 3.2rem;
+        font-family: 'Fraunces', serif;
       }
       span.price-original {
+        font-size: 1.3rem;
+        text-decoration: line-through;
       }
     }
 
     button.add-to-cart {
       width: 100%;
       padding: 1em;
-      margin-top: 2em;
+      margin-top: 1.5em;
       border: none;
       border-radius: 0.8rem;
       background-color: var(--color-primary);
@@ -96,15 +109,55 @@ main.card {
       font-size: 1.4rem;
       font-weight: 700;
       cursor: pointer;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1em;
+
+      img {
+        width: 1.1em;
+      }
+
+      &:hover {
+        background-color: var(--color-primary-dark);
+      }
+    }
+  }
+}
+
+@media (min-width: 650px) {
+  main.card {
+    width: 600px;
+    height: 450px;
+    display: flex;
+    align-items: stretch;
+
+    section.card-image {
+      width: 50%;
+      img {
+        border-radius: 1rem 0 0 1rem;
+      }
+    }
+
+    section.card-product {
+      width: 50%;
+      padding: 5%;
+      border-radius: 0 1rem 1rem 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
     }
   }
 }
 
 footer.attribution {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
 
   a {
     color: hsl(228, 45%, 44%);
+    text-decoration: none;
   }
 }
