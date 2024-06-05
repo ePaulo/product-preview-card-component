@@ -16,9 +16,7 @@ There is a `style-guide.md` file containing the design color palette and fonts.
 
 ### Built with
 
-HTML-5 semantic tags
-CSS-3 responsive code with flexbox
-focus on making the code adhere to current accessibility standards
+HTML-5 semantic tags, CSS-3 responsive-code with flexbox, and a focus on making the code adhere to basic accessibility standards.
 
 ### What I learned
 
